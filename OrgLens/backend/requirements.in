@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+openai
+python-docx
+pdfplumber
+openpyxl
+python-multipart
+python-dotenv
+pytest
+httpx
+reportlab
+

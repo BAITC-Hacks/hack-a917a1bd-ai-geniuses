@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "usage": "Только автоматические тесты и отдельная оценка. Не передавать в рабочий AI-пайплайн.",
+  "department_changes": [
+    {"change_type": "split", "before_names": ["Центр информационных технологий"], "after_names": ["Отдел разработки", "Отдел инфраструктуры"], "evidence_status": "direct"},
+    {"change_type": "created", "before_names": [], "after_names": ["Отдел информационной безопасности"], "evidence_status": "direct"},
+    {"change_type": "preserved", "before_names": ["Отдел закупок"], "after_names": ["Отдел закупок"]},
+    {"change_type": "preserved", "before_names": ["Бухгалтерия"], "after_names": ["Бухгалтерия"]}
+  ],
+  "function_mappings": [
+    {"function_terms": ["резервн", "копирован"], "relation": "transferred", "after_department": "Отдел инфраструктуры"},
+    {"function_terms": ["реестр", "лицензи"], "relation": "not_found"},
+    {"function_terms": ["подготов", "заяв"], "relation": "preserved"},
+    {"function_terms": ["согласован", "заяв"], "relation": "preserved"}
+  ],
+  "findings": [
+    {"type": "potential_loss", "terms": ["реестр", "лицензи"]},
+    {"type": "potential_duplication", "terms": ["доступ"], "department_names": ["Отдел инфраструктуры", "Отдел информационной безопасности"]},
+    {"type": "potential_conflict", "terms": ["аудит"], "department_names": ["Отдел разработки"]}
+  ],
+  "forbidden_findings": [
+    {"type": "potential_loss", "terms": ["резервн", "копирован"]},
+    {"type": "potential_duplication", "department_names": ["Отдел закупок", "Бухгалтерия"]}
+  ],
+  "required_evidence": "Все block_id существуют; точные цитаты находятся в соответствующих блоках; стороны и адреса подтверждены реестром источников."
+}
